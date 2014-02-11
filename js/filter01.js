@@ -20,3 +20,16 @@ myApp.controller("DataCtrl", function($scope, Data){
 	}
 });
 
+/**** Directives ****/
+
+myApp.controller("AppCtrl", function($scope) {
+    $scope.paramFlavor = "Orange"
+})
+myApp.directive("drink", function() {
+    return {
+        scope: {
+            flavor: "@"
+        },
+        template: '<div>{{flavor}}</div>'
+    }
+})

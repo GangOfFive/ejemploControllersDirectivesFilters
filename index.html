@@ -5,18 +5,37 @@
     <title>Directives - Controllers - Filters</title>
 </head>
 <body>
-
+	
     <div ng-app="myApp">
-
+    	<h1>Ejemplo de Filters</h1>
 	    <div ng-controller="DataCtrl">
 	      <input type="text" ng-model="data.message">
-	      <h1>{{data.message}}</h1>
-	      <h1>Bien => {{data.message|reverse}}</h1>
-	      <h1>Mal => {{reversedMessage(data.message)}}</h1>
+	      <h2>{{data.message}}</h2>
+	      <h2>Bien => {{data.message|reverse}}</h2>
+	      <h2>Mal => {{reversedMessage(data.message)}}</h2>
 	    </div>
+
+	    <hr/>
+
+		<h1>Ejemplo de Directives</h1>
+		<div ng-controller="AppCtrl">
+		  <h2>@</h2>
+		  <input type="text" ng-model="paramFlavor">
+		  <div drink flavor="{{paramFlavor}}"></div>
+		</div>
+
+		<div ng-controller="AppCtrlTwo">
+		  <h2>=</h2>
+		     Ctrl
+		     <input type="text" ng-model="paramFlavor">
+
+		     Dir
+		     <div drinkTwo flavorTwo="paramFlavor"></div>
+		</div>
+
 	</div>
 
-    <script src="lib/angular/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
